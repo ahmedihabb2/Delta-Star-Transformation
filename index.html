@@ -1,0 +1,73 @@
+﻿<!DOCTYPE html>
+<title>Δ & Y Converter</title>
+<body background="https://wallpaperplay.com/walls/full/e/e/3/125516.jpg">
+    <div class="r-image">
+    <img  src="https://docs.google.com/drawings/d/sWD0iTilio_P-VCv0oyOccg/image?parent=1kCESyFMORngtCcV_nHciSyOsmnXVbH3WGGwb-RIQU78&rev=151&h=257&w=645&ac=1" title="Delta & Star"/>
+    <br />
+    <form id="myform">
+ <b>Rc</b> : <input type="text" name="num1" id="c">
+    <b>R1</b> : <input type="text" name="num4" id="r1"><br /><br />
+   <b>Rb</b> : <input type="text" name="num3" id="b">
+    <b>R2</b> : <input type="text" name="num5" id="r2"><br /><br />
+   <b>Ra</b> : <input type="text" name="num2" id="a">
+   <b>R3</b> : <input type="text" name="num6" id="r3"><br /><br />
+</form>
+<button onclick="adder()" class="btn-1"> Δ To Y</button>
+<button onclick="adder2()" class="btn-2"> Y To Δ </button><br><br>
+        </div>
+</body>
+
+
+
+
+    <script type="text/javascript">
+        var total = 0;
+
+        function adder() {
+            var num1 = parseInt(document.getElementById("myform").elements["num1"].value);
+            var num2 = parseInt(document.getElementById("myform").elements["num2"].value);
+            var num3 = parseInt(document.getElementById("myform").elements["num3"].value);
+            totalOfr1 = (num1 * num3) / (num1 + num2 + num3);
+            totalOfr2 = (num1 * num2) / (num1 + num2 + num3);
+            totalOfr3 = (num2 * num3) / (num1 + num2 + num3);
+            document.getElementById("r2").value = totalOfr1;
+            document.getElementById("r1").value = totalOfr2;
+            document.getElementById("r3").value = totalOfr3;
+        }
+        function adder2() {
+            var num4 = parseInt(document.getElementById("myform").elements["num4"].value);
+            var num5 = parseInt(document.getElementById("myform").elements["num5"].value);
+            var num6 = parseInt(document.getElementById("myform").elements["num6"].value);
+            totalOfc = num4 + num5 + (num4 * num5) / num6;
+            totalOfb = num5 + num6 + (num5 * num6) / num4;
+            totalOfa = num6 + num4 + (num6 * num4) / num5;
+            document.getElementById("c").value = totalOfc;
+            document.getElementById("b").value = totalOfb;
+            document.getElementById("a").value = totalOfa;
+
+
+        }
+    </script>
+<style>
+
+.r-image{
+ text-align:center;
+    margin:0 auto;}
+.btn-2{
+    margin-left:61px;
+    font-size:19px;
+}
+.btn-1{
+        margin-right: 241px;
+            font-size:19px;
+}
+#a{
+margin-right:174px;
+}
+#b{
+margin-right:174px;
+}
+#c{
+margin-right:174px;
+}
+</style>
